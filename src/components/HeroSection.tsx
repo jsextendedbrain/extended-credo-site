@@ -18,8 +18,7 @@ const HeroSection = () => {
             src={logo}
             alt=""
             aria-hidden="true"
-            className="w-full h-auto opacity-[0.06]"
-            style={{ filter: "grayscale(100%) contrast(1.2)" }}
+            className="w-full h-auto opacity-[0.15]"
           />
         </div>
       </div>
