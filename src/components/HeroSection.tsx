@@ -8,10 +8,11 @@ const HeroSection = () => {
       {/* Logo graphic as large background watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div
-          className="w-[500px] md:w-[700px] lg:w-[900px] select-none"
+          className="w-[600px] md:w-[800px] lg:w-[1100px] select-none"
           style={{ 
-            clipPath: "inset(0 0 60% 0)",
-            transform: "scale(2.5)",
+            clipPath: "inset(0 0 55% 0)",
+            transform: "scale(2.8)",
+            marginTop: "60px",
           }}
         >
           <img
