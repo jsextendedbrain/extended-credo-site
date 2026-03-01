@@ -1,10 +1,19 @@
 import { ArrowDown } from "lucide-react";
 import { profile } from "@/data/profile";
-import logo from "@/assets/logo.png";
+import heroBgGraphic from "@/assets/hero-bg-graphic.png";
 
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
+      {/* Background speech bubble graphic */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <img
+          src={heroBgGraphic}
+          alt=""
+          className="w-[500px] md:w-[700px] lg:w-[900px] opacity-10"
+          aria-hidden="true"
+        />
+      </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
         <h1
