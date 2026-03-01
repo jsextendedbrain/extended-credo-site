@@ -10,7 +10,7 @@ const HeroSection = () => {
         <img
           src={heroBgGraphic}
           alt=""
-          className="w-[400px] md:w-[560px] lg:w-[720px] opacity-10"
+          className="w-[640px] md:w-[896px] lg:w-[1152px] opacity-10"
           aria-hidden="true"
         />
       </div>
