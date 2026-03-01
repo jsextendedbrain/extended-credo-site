@@ -5,33 +5,6 @@ import logo from "@/assets/logo.png";
 const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
-      {/* Logo graphic as large background watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div
-          className="w-[600px] md:w-[800px] lg:w-[1100px] select-none"
-          style={{ 
-            clipPath: "inset(0 0 55% 0)",
-            transform: "scale(2.8)",
-            marginTop: "60px",
-          }}
-        >
-          <img
-            src={logo}
-            alt=""
-            aria-hidden="true"
-            className="w-full h-auto opacity-[0.15]"
-          />
-        </div>
-      </div>
-
-      {/* Subtle dot grid */}
-      <div
-        className="absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage: `radial-gradient(hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: "24px 24px",
-        }}
-      />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
         <h1
