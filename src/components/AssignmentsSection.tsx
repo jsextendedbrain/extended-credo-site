@@ -1,7 +1,10 @@
-import { selectedAssignments } from "@/data/profile";
 import { ArrowUpRight } from "lucide-react";
+import { useCmsSection } from "@/hooks/useCmsSection";
+import { selectedAssignments, type Assignment } from "@/data/profile";
 
 const AssignmentsSection = () => {
+  const { data: assignments } = useCmsSection<Assignment[]>("assignments", selectedAssignments);
+
   return (
     <section id="assignments" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
@@ -14,7 +17,7 @@ const AssignmentsSection = () => {
         </p>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {selectedAssignments.map((a, i) => (
+          {(assignments ?? selectedAssignments).map((a, i) => (
             <div
               key={i}
               className="group bg-card rounded-xl p-7 shadow-card hover:shadow-card-hover transition-all duration-300 border border-border hover:border-secondary/30 hover:-translate-y-1"
