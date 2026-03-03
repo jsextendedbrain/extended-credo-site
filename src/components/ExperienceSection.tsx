@@ -1,6 +1,9 @@
-import { employments, boardPositions } from "@/data/profile";
+import { employments, boardPositions, type Employment } from "@/data/profile";
+import { useCmsSection } from "@/hooks/useCmsSection";
 
 const ExperienceSection = () => {
+  const { data: experience } = useCmsSection<Employment[]>("experience", employments);
+
   return (
     <section id="experience" className="section-padding bg-muted/40">
       <div className="max-w-4xl mx-auto">
@@ -8,11 +11,9 @@ const ExperienceSection = () => {
         <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-14">Work History</h2>
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-[7px] top-3 bottom-3 w-px bg-border" />
-
           <div className="space-y-10">
-            {employments.map((e, i) => (
+            {(experience ?? employments).map((e, i) => (
               <div key={i} className="relative pl-10 group">
                 <div className="absolute left-0 top-2 w-[15px] h-[15px] rounded-full border-[3px] border-secondary bg-background group-hover:border-accent transition-colors" />
                 <div>

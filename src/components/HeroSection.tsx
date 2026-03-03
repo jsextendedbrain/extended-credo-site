@@ -1,11 +1,26 @@
 import { ArrowDown } from "lucide-react";
+import { useCmsSection } from "@/hooks/useCmsSection";
 import { profile } from "@/data/profile";
 import heroBgGraphic from "@/assets/hero-bg-graphic.png";
 
+interface HeroContent {
+  company: string;
+  tagline: string;
+  introText: string;
+}
+
+const heroFallback: HeroContent = {
+  company: profile.company,
+  tagline: profile.tagline,
+  introText: "We help organisations clarify, stabilise, and develop their digital products, platforms, and ways of working — bridging strategy and execution with senior expertise.",
+};
+
 const HeroSection = () => {
+  const { data: hero } = useCmsSection<HeroContent>("hero", heroFallback);
+  const content = hero ?? heroFallback;
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
-      {/* Background speech bubble graphic */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <img
           src={heroBgGraphic}
@@ -20,13 +35,13 @@ const HeroSection = () => {
           className="font-display text-5xl md:text-7xl lg:text-8xl text-foreground mb-6 opacity-0 animate-fade-in-up"
           style={{ animationDelay: "0.1s" }}
         >
-          {profile.company}
+          {content.company}
         </h1>
         <p
           className="text-lg md:text-xl text-foreground/70 font-light tracking-widest uppercase mb-6 opacity-0 animate-fade-in-up"
           style={{ animationDelay: "0.3s" }}
         >
-          {profile.tagline}
+          {content.tagline}
         </p>
         <div
           className="w-16 h-px bg-accent mx-auto mb-8 opacity-0 animate-fade-in-up"
@@ -36,7 +51,7 @@ const HeroSection = () => {
           className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-14 leading-relaxed opacity-0 animate-fade-in-up"
           style={{ animationDelay: "0.5s" }}
         >
-          We help organisations clarify, stabilise, and develop their digital products, platforms, and ways of working — bridging strategy and execution with senior expertise.
+          {content.introText}
         </p>
         <button
           onClick={() =>

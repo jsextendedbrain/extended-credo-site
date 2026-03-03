@@ -1,10 +1,33 @@
+import { useCmsSection } from "@/hooks/useCmsSection";
 import { profile } from "@/data/profile";
 import { Mail, Phone, Linkedin } from "lucide-react";
 
+interface ContactContent {
+  name: string;
+  email: string;
+  phone: string;
+  linkedin: string;
+  profileSummary: string;
+  languages: string[];
+  education: string;
+}
+
+const contactFallback: ContactContent = {
+  name: profile.name,
+  email: profile.email,
+  phone: profile.phone,
+  linkedin: profile.linkedin,
+  profileSummary: profile.profileSummary,
+  languages: profile.languages,
+  education: profile.education,
+};
+
 const ContactSection = () => {
+  const { data: contact } = useCmsSection<ContactContent>("contact", contactFallback);
+  const c = contact ?? contactFallback;
+
   return (
     <section id="contact" className="section-padding bg-foreground relative overflow-hidden">
-      {/* Decorative accent */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/8 -translate-y-1/2 translate-x-1/3" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-secondary/8 translate-y-1/2 -translate-x-1/3" />
 
@@ -19,21 +42,21 @@ const ContactSection = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={`mailto:${profile.email}`}
+            href={`mailto:${c.email}`}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-accent text-accent-foreground font-medium hover:opacity-90 transition-opacity text-sm"
           >
             <Mail size={16} />
-            {profile.email}
+            {c.email}
           </a>
           <a
-            href={`tel:${profile.phone.replace(/\s/g, "")}`}
+            href={`tel:${c.phone.replace(/\s/g, "")}`}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-primary-foreground/80 border border-primary-foreground/15 font-medium hover:border-primary-foreground/30 transition-colors text-sm"
           >
             <Phone size={16} />
-            {profile.phone}
+            {c.phone}
           </a>
           <a
-            href={profile.linkedin}
+            href={c.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-primary-foreground/80 border border-primary-foreground/15 font-medium hover:border-primary-foreground/30 transition-colors text-sm"
