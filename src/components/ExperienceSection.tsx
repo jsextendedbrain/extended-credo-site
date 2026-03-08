@@ -1,9 +1,6 @@
-import { employments, boardPositions, type Employment } from "@/data/profile";
-import { useCmsSection } from "@/hooks/useCmsSection";
+import { employments, boardPositions } from "@/data/profile";
 
 const ExperienceSection = () => {
-  const { data: experience } = useCmsSection<Employment[]>("experience", employments);
-
   return (
     <section id="experience" className="section-padding bg-muted/40">
       <div className="max-w-4xl mx-auto">
@@ -13,7 +10,7 @@ const ExperienceSection = () => {
         <div className="relative">
           <div className="absolute left-[7px] top-3 bottom-3 w-px bg-border" />
           <div className="space-y-10">
-            {(experience ?? employments).map((e, i) => (
+            {employments.map((e, i) => (
               <div key={i} className="relative pl-10 group">
                 <div className="absolute left-0 top-2 w-[15px] h-[15px] rounded-full border-[3px] border-secondary bg-background group-hover:border-accent transition-colors" />
                 <div>
@@ -27,7 +24,6 @@ const ExperienceSection = () => {
           </div>
         </div>
 
-        {/* Board positions */}
         <div className="mt-20">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-accent mb-3">Side Projects</p>
           <h3 className="text-2xl font-semibold text-foreground mb-8">

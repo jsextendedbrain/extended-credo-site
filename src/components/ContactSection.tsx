@@ -1,31 +1,7 @@
-import { useCmsSection } from "@/hooks/useCmsSection";
 import { profile } from "@/data/profile";
 import { Mail, Phone, Linkedin } from "lucide-react";
 
-interface ContactContent {
-  name: string;
-  email: string;
-  phone: string;
-  linkedin: string;
-  profileSummary: string;
-  languages: string[];
-  education: string;
-}
-
-const contactFallback: ContactContent = {
-  name: profile.name,
-  email: profile.email,
-  phone: profile.phone,
-  linkedin: profile.linkedin,
-  profileSummary: profile.profileSummary,
-  languages: profile.languages,
-  education: profile.education,
-};
-
 const ContactSection = () => {
-  const { data: contact } = useCmsSection<ContactContent>("contact", contactFallback);
-  const c = contact ?? contactFallback;
-
   return (
     <section id="contact" className="section-padding bg-foreground relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-accent/8 -translate-y-1/2 translate-x-1/3" />
@@ -42,21 +18,21 @@ const ContactSection = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href={`mailto:${c.email}`}
+            href={`mailto:${profile.email}`}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-accent text-accent-foreground font-medium hover:opacity-90 transition-opacity text-sm"
           >
             <Mail size={16} />
-            {c.email}
+            {profile.email}
           </a>
           <a
-            href={`tel:${c.phone.replace(/\s/g, "")}`}
+            href={`tel:${profile.phone.replace(/\s/g, "")}`}
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-primary-foreground/80 border border-primary-foreground/15 font-medium hover:border-primary-foreground/30 transition-colors text-sm"
           >
             <Phone size={16} />
-            {c.phone}
+            {profile.phone}
           </a>
           <a
-            href={c.linkedin}
+            href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full text-primary-foreground/80 border border-primary-foreground/15 font-medium hover:border-primary-foreground/30 transition-colors text-sm"
