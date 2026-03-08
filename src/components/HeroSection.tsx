@@ -35,7 +35,7 @@ const HeroSection = () => {
           className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-14 leading-relaxed opacity-0 animate-fade-in-up"
           style={{ animationDelay: "0.5s" }}
         >
-          We help organisations clarify, stabilise, and develop their digital products, platforms, and ways of working — bridging strategy and execution with senior expertise.
+          Help organisations clarify, stabilise, and develop their digital products, platforms, and ways of working — bridging strategy and execution with senior expertise.
         </p>
         <button
           onClick={() =>
