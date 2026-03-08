@@ -1,10 +1,7 @@
-import { useCmsSection } from "@/hooks/useCmsSection";
-import { courses as defaultCourses, profile, type CourseCategory } from "@/data/profile";
+import { courses, profile } from "@/data/profile";
 import { GraduationCap } from "lucide-react";
 
 const CoursesSection = () => {
-  const { data: courses } = useCmsSection<CourseCategory[]>("courses", defaultCourses);
-
   return (
     <section id="courses" className="section-padding bg-background">
       <div className="max-w-6xl mx-auto">
@@ -24,7 +21,7 @@ const CoursesSection = () => {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {(courses ?? defaultCourses).map((cat, i) => (
+          {courses.map((cat, i) => (
             <div
               key={i}
               className="bg-card rounded-xl p-6 border border-border shadow-card hover:shadow-card-hover transition-shadow duration-300"
