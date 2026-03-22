@@ -13,7 +13,7 @@ const ContactSection = () => {
           Let's Work Together
         </h2>
         <p className="text-primary-foreground/50 mb-12 max-w-lg mx-auto">
-          Looking for a senior product and technology leader? Let's talk about how I can help your organization.
+          Looking for a fractional or interim senior product and technology leader? Let's talk about how I can help your organization.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

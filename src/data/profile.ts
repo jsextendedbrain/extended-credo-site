@@ -7,7 +7,7 @@ export const profile = {
   linkedin: "https://linkedin.com/in/johannasaidi",
   languages: ["Swedish (native)", "English (fluent)", "German (basic)"],
   education: "Master of Science in Media Technology, Management Control, IT, Communication and Organizational Design – Linköping University (1997–2004)",
-  profileSummary: "Senior product and technology leader with 15+ years of experience across large-scale organizations and smaller businesses. A pragmatic problem solver comfortable taking responsibility in complex environments — clarifying, stabilising, and developing products, platforms, and ways of working.",
+  profileSummary: "Extended Brain is run by Johanna Saidi, a Senior product and technology leader with 15+ years of experience across large-scale organizations and smaller businesses. A pragmatic problem solver comfortable taking responsibility in complex environments — clarifying, stabilising, and developing products, platforms, and ways of working.",
   keySkills: [
     "Agile Leadership",
     "Executive Stakeholder Management",
