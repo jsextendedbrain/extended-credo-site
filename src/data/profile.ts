@@ -99,6 +99,12 @@ export interface Employment {
 
 export const employments: Employment[] = [
   {
+    company: "PayPal",
+    role: "PMO Commercial, Senior Migration Lead & Project Manager",
+    period: "2026–Present",
+    description: "Lead migration across several different organisational units and customer focused risk and compliance improvements.",
+  },
+  {
     company: "Rapunzel of Sweden AB",
     role: "Head of Development & IT – CPO/CTO",
     period: "2020–2026",
