@@ -99,7 +99,7 @@ export interface Employment {
 
 export const employments: Employment[] = [
   {
-    company: "PayPal",
+    company: "PayPal (Contract)",
     role: "PMO Commercial, Senior Migration Lead & Project Manager",
     period: "2026–Present",
     description: "Lead migration across several different organisational units and customer focused risk and compliance improvements.",
