@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-256.webp";
 
 const navItems = [
   { label: "Home", path: "/" },
@@ -32,7 +32,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="Extended Brain" className="h-16 w-auto" />
+          <img src={logo} alt="Extended Brain" width={256} height={129} decoding="async" className="h-16 w-auto" />
         </Link>
 
         {/* Desktop nav */}
