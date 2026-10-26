@@ -1,6 +1,8 @@
 import { ArrowDown } from "lucide-react";
 import { profile } from "@/data/profile";
-import heroBgGraphic from "@/assets/hero-bg-graphic.png";
+import heroBgSmall from "@/assets/hero-bg-graphic-768.webp";
+import heroBgGraphic from "@/assets/hero-bg-graphic-1536.webp";
+import heroBgLarge from "@/assets/hero-bg-graphic-2304.webp";
 
 const HeroSection = () => {
   return (
@@ -8,8 +10,13 @@ const HeroSection = () => {
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <img
           src={heroBgGraphic}
+          srcSet={`${heroBgSmall} 768w, ${heroBgGraphic} 1536w, ${heroBgLarge} 2304w`}
+          sizes="(min-width: 1024px) 1152px, (min-width: 768px) 896px, 640px"
+          width={1536}
+          height={1024}
+          decoding="async"
           alt=""
-          className="w-[640px] md:w-[896px] lg:w-[1152px] opacity-10"
+          className="w-[640px] md:w-[896px] lg:w-[1152px] h-auto opacity-10"
           aria-hidden="true"
         />
       </div>

@@ -1,6 +1,7 @@
 import { profile } from "@/data/profile";
 import { Linkedin, Mail } from "lucide-react";
-import portrait from "@/assets/johanna-portrait.jpg";
+import portraitSmall from "@/assets/johanna-portrait-480.webp";
+import portrait from "@/assets/johanna-portrait-960.webp";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -16,6 +17,12 @@ const About = () => {
               <div className="aspect-[3/4] rounded-xl overflow-hidden shadow-card">
                 <img
                   src={portrait}
+                  srcSet={`${portraitSmall} 480w, ${portrait} 960w`}
+                  sizes="(min-width: 1024px) 390px, (min-width: 768px) 36vw, calc(100vw - 48px)"
+                  width={960}
+                  height={1200}
+                  fetchPriority="high"
+                  decoding="async"
                   alt={`${profile.name} – ${profile.company}`}
                   className="w-full h-full object-cover"
                 />
