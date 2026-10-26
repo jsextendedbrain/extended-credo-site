@@ -73,6 +73,7 @@
       {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": "https://extendedbrain.se/#person",
         "name": "Johanna Saidi",
         "jobTitle": "Senior Product & Technology Leader",
         "description": "Senior product and technology leader with 15+ years of experience across large-scale organizations and smaller businesses. A pragmatic problem solver comfortable taking responsibility in complex environments — clarifying, stabilising, and developing products, platforms, and ways of working.",
@@ -80,10 +81,7 @@
         "telephone": "+46 73 078 70 38",
         "url": "https://extendedbrain.se/",
         "sameAs": ["https://linkedin.com/in/johannasaidi"],
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Extended Brain"
-        },
+        "worksFor": { "@id": "https://extendedbrain.se/#organization" },
         "knowsAbout": [
           "Agile Leadership", "Executive Stakeholder Management", "Digital Transformation",
           "Omnichannel Strategy", "E-commerce Platforms", "ERP/CRM/POS Systems",
@@ -94,7 +92,15 @@
           "@type": "EducationalOrganization",
           "name": "Linköping University"
         },
-        "knowsLanguage": ["Swedish", "English", "German"]
+        "knowsLanguage": ["Swedish", "English", "German"],
+        "memberOf": [{ "@type": "Organization", "name": "Kankoda AB", "description": "Board Member (2020–ongoing)" }],
+        "hasCredential": [
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "degree", "name": "Master of Science in Media Technology – Linköping University" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "Design av AI agenter – Abundly" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "Management 3.0 – Citerus" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "PPS – Praktisk projektstyrning – Tieto Enator" },
+          { "@type": "EducationalOccupationalCredential", "credentialCategory": "certificate", "name": "IT-leadership program – H&M" }
+        ]
       }
     ]
     </script>
